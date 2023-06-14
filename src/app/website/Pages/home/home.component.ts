@@ -33,9 +33,11 @@ export class HomeComponent {
   }
 
   async enviarCorreo() {
-    const destinatario = 'johnruedaf@gmail.com';
-    const asunto = '¡Hola!';
-    const contenido = 'Este es un ejemplo de correo enviado desde SendGrid en Angular.';
+    // const destinatario = 'johnruedaf@gmail.com';
+    // const asunto = '¡Hola!';
+    // const contenido = 'Este es un ejemplo de correo enviado desde SendGrid en Angular.';
+
+    await this.emailService.test()
 
     // await this.emailService.enviarCorreo()
     //   .then(() => {
