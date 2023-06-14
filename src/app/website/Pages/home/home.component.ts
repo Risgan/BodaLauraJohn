@@ -10,6 +10,9 @@ import { MailService } from '../../Service/mail.service';
 })
 export class HomeComponent {
 
+  fecha: Date = new Date
+  fecha2: Date = new Date('2024-04-27T16:30:00')
+  fecha3!: Date;
   constructor(
     private messageService: MessageService,
     private emailService: MailService
@@ -30,6 +33,7 @@ export class HomeComponent {
 
   showError() {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Te amo mucho Laurita en rojo' });
+      
   }
 
   async enviarCorreo() {
