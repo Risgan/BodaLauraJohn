@@ -10,6 +10,7 @@ import { HeaderComponent } from './Pages/master-page/header/header.component';
 import { FooterComponent } from './Pages/master-page/footer/footer.component';
 import { MenuComponent } from './Pages/master-page/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClockComponent } from './Pages/master-page/clock/clock.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
+    ClockComponent,
   ],
   imports: [
     CommonModule,

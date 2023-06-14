@@ -1,22 +1,40 @@
 .wedding-header {
     text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-    margin-bottom: 20px;
+    background-color: var(--Janna);
+    padding: 1px;
+    // margin-bottom: 10px;
   }
   
   .couple-names {
     font-size: 28px;
     margin-bottom: 10px;
+    color: var(--CannonPink);
   }
   
   .wedding-date {
     font-size: 20px;
     margin-bottom: 5px;
+    color: var(--CannonPink);
   }
   
-  .ceremony-location {
-    font-size: 16px;
-    color: #666;
+  
+//   .ceremony-location {
+//     font-size: 16px;
+//     color: #666;
+//   }
+  
+
+  
+  @media (max-width: 768px) {
+    .wedding-date {
+        color: var(--TawnyPort);
+
+    }
   }
   
+  @media (max-width: 480px) {
+    .wedding-date {
+        color: var(--Brandy);
+
+    }
+  }
