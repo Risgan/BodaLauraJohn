@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component';
 import { MasterPageComponent } from './Pages/master-page/master-page.component';
+import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
+import { RecepcionComponent } from './Pages/recepcion/recepcion.component';
+import { GaleriaComponent } from './Pages/galeria/galeria.component';
+import { CartaComponent } from './Pages/carta/carta.component';
 
 const routes: Routes = [
   {
@@ -10,9 +14,34 @@ const routes: Routes = [
     children:[
       {
         path:'',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
+        path:'home',
         component: HomeComponent,
         pathMatch: 'full'
-      }
+      },
+      {
+        path:'ubicacion',
+        component: UbicacionComponent,
+        pathMatch: 'full'
+      },
+      {
+        path:'recepcion',
+        component: RecepcionComponent,
+        pathMatch: 'full'
+      },
+      {
+        path:'galeria',
+        component: GaleriaComponent,
+        pathMatch: 'full'
+      },
+      {
+        path:'carta',
+        component: CartaComponent,
+        pathMatch: 'full'
+      },
     ]
   },
 ];

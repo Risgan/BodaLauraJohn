@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimengModule } from './primeng/primeng.module';
+import { MaterialModule } from './material/material.module';
 
 const modules=[
   PrimengModule
@@ -10,7 +11,8 @@ const modules=[
   declarations: [],
   imports: [
     CommonModule,
-    PrimengModule
+    PrimengModule,
+    MaterialModule
   ],
   exports: [
     PrimengModule

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  isVisible(): boolean {
+    return window.matchMedia('(min-width: 768px)').matches;
+  }
+
 }

@@ -11,6 +11,12 @@ import { FooterComponent } from './Pages/master-page/footer/footer.component';
 import { MenuComponent } from './Pages/master-page/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClockComponent } from './Pages/master-page/clock/clock.component';
+import { InvitacionComponent } from './Pages/invitacion/invitacion.component';
+import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
+import { RecepcionComponent } from './Pages/recepcion/recepcion.component';
+import { ConfirmacionComponent } from './Pages/confirmacion/confirmacion.component';
+import { GaleriaComponent } from './Pages/galeria/galeria.component';
+import { CartaComponent } from './Pages/carta/carta.component';
 
 
 @NgModule({
@@ -21,6 +27,12 @@ import { ClockComponent } from './Pages/master-page/clock/clock.component';
     FooterComponent,
     MenuComponent,
     ClockComponent,
+    InvitacionComponent,
+    UbicacionComponent,
+    RecepcionComponent,
+    ConfirmacionComponent,
+    GaleriaComponent,
+    CartaComponent,
   ],
   imports: [
     CommonModule,
