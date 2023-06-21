@@ -11,8 +11,34 @@
   
   .content {
     flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: var(--orange-50);
+  }
+
+  .target{
+    width: 70vw;
+    // width: 90vw;
+    padding: 6px;
+    background: white;
+    margin: 15px 0px;
   }
   
   .footer {
     flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    
+    .target{
+      width: 80vw;
+    }
+    
+  }
+
+  @media (max-width: 480px) {
+    .target{
+      width: 90vw;
+    }
   }
