@@ -38,9 +38,6 @@ export class ClockComponent implements OnInit {
       const horas: number = Math.floor(minutos / 60);
       const dias: number = Math.floor(horas / 24);
 
-      console.log(dias, horas, minutos, segundos);
-
-
       // Resto de horas, minutos y segundos después de calcular los días
       const horasRestantes: number = horas % 24;
       const minutosRestantes: number = minutos % 60;

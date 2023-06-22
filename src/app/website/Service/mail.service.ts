@@ -2,74 +2,84 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { QuerySnapshot, collection, doc, getDocs, getFirestore, query, setDoc, where } from "firebase/firestore";
 import { initializeApp } from 'firebase/app';
+import { FirebaseService } from './firebase.service';
+import { getDownloadURL, getStorage, list, listAll, ref } from 'firebase/storage';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCTH4A6KVA3mhITuJl_f9CXsUvrInDxo9Y",
-  authDomain: "backendbodalaurajohn.firebaseapp.com",
-  projectId: "backendbodalaurajohn",
-  storageBucket: "backendbodalaurajohn.appspot.com",
-  messagingSenderId: "112795964757",
-  appId: "1:112795964757:web:c00c67dcfff709bdc34bdc",
-  measurementId: "G-BMJFWHG2RH"
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class MailService {
 
-  // querySnapshot = QuerySnapshot
-//  citiesRef = collection(db, "cities");
-  
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private firebase: FirebaseService,
+    ) {
   }
   
   async test(){
-    const app = initializeApp(firebaseConfig);
+    // const db = this.firebase.getDb();
+    // console.log(db);
+    
 
-    const db = getFirestore(app);
+    // const querySnapshot = await getDocs(collection(db,"test"));
+    // console.log(querySnapshot)
 
-    // Required for side-effects
-    // require("firebase/firestore");
+    // querySnapshot.forEach((doc) => {
+    //   console.log(`${doc.id} => ${doc.data()}`);
+    // });
 
-    // const citiesRef = collection(this.db, "cities");
+    // querySnapshot.forEach(async (doc) => {
+    //   // doc.data() is never undefined for query doc snapshots
+    //   console.log(doc.id, " => ", doc.data());
+    //   console.log(doc.data());
+    //   var x =  Object.values(doc.data());
+    //   console.log(x)
+    // });
 
-// await setDoc(doc(citiesRef, "SF"), {
-//     name: "San Francisco", state: "CA", country: "USA",
-//     capital: false, population: 860000,
-//     regions: ["west_coast", "norcal"] });
-// await setDoc(doc(citiesRef, "LA"), {
-//     name: "Los Angeles", state: "CA", country: "USA",
-//     capital: false, population: 3900000,
-//     regions: ["west_coast", "socal"] });
-// await setDoc(doc(citiesRef, "DC"), {
-//     name: "Washington, D.C.", state: null, country: "USA",
-//     capital: true, population: 680000,
-//     regions: ["east_coast"] });
-// await setDoc(doc(citiesRef, "TOK"), {
-//     name: "Tokyo", state: null, country: "Japan",
-//     capital: true, population: 9000000,
-//     regions: ["kanto", "honshu"] });
-// await setDoc(doc(citiesRef, "BJ"), {
-//     name: "Beijing", state: null, country: "China",
-//     capital: true, population: 21500000,
-//     regions: ["jingjinji", "hebei"] });
+    // const storage2 = this.firebase.getstorage();
+    // console.log(storage2);
+    
+    const storage = getStorage();
+    // console.log(storage2);
 
-    // const items=[]
-    const querySnapshot = await getDocs(collection(db,"test"));
-    console.log(querySnapshot)
+    // const pathReference = ref(storage, 'home/0-5000x3333.jpg');
+    
+    // console.log(pathReference);
 
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
+    const listRef = ref(storage, 'home');
+
+    console.log(listRef);
+    
+    listAll(listRef)
+    .then((res) => {
+      console.log(res);
+      
+      res.prefixes.forEach((folderRef) => {
+        console.log(folderRef);
+        
+        // All the prefixes under listRef.
+        // You may call listAll() recursively on them.
+      });
+      res.items.forEach((itemRef) => {
+        console.log(itemRef);
+        console.log(JSON.parse(JSON.stringify(itemRef))._location.path_);
+        
+        getDownloadURL(ref(storage, JSON.parse(JSON.stringify(itemRef))._location.path_))
+          .then((url) => {
+            console.log(url);
+            
+          })
+                
+        // All the items under listRef.
+      });
+    }).catch((error) => {
+      // Uh-oh, an error occurred!
     });
+    
+    
 
-    querySnapshot.forEach(async (doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-      console.log(doc.data());
-      var x =  Object.values(doc.data());
-      console.log(x)
-    });
+
   }
   
     
