@@ -15,8 +15,9 @@ export class StorageService {
 
     const storage = getStorage();
 
-    const listRef = ref(storage, 'home');
+    const listRef = ref(storage, path);
 
+    console.log((await listAll(listRef)).items)
     
     await listAll(listRef).then(async (res) => {
 
@@ -24,8 +25,7 @@ export class StorageService {
       
       res.items.forEach(async (itemRef) => {
         
-        await getDownloadURL(ref(storage, JSON.parse(JSON.stringify(itemRef))._location.path_))
-          .then((url) => {
+        await getDownloadURL(ref(storage, JSON.parse(JSON.stringify(itemRef))._location.path_)).then((url) => {
             this.listImages.push(url)
             console.log(this.listImages)
 
@@ -34,11 +34,12 @@ export class StorageService {
                 
         // All the items under listRef.
       });
+    console.log(this.listImages)
+
     }).catch((error) => {
       // Uh-oh, an error occurred!
     });
-    console.log(this.listImages)
-
+    return this.listImages
   }
 
 }

@@ -1,0 +1,13 @@
+<!-- <swiper [slidesPerView]="1" [spaceBetween]="50">
+    <ng-template swiperSlide *ngFor="let xs of images">
+        <img  style="width: 100px;" [src]="xs" alt="">
+        
+    </ng-template>
+</swiper> -->
+<div style="height: 500px;">
+    <swiper [config]="config">
+        <ng-template swiperSlide *ngFor="let xs of images">
+            <img [src]="xs" alt="">
+        </ng-template>
+    </swiper>
+</div>

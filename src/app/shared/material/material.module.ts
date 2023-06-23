@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
+import {SwiperModule} from 'swiper/angular';
+
 
 
 const modules=[
-  MatIconModule
+  MatIconModule,
+  // SwiperModule
 ]
 
 @NgModule({

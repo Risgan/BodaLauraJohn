@@ -8,7 +8,8 @@ const modules=[
 ]
 
 @NgModule({
-  declarations: [],
+  declarations: [    
+  ],
   imports: [
     CommonModule,
     PrimengModule,

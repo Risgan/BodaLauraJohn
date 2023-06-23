@@ -17,6 +17,8 @@ import { RecepcionComponent } from './Pages/recepcion/recepcion.component';
 import { ConfirmacionComponent } from './Pages/confirmacion/confirmacion.component';
 import { GaleriaComponent } from './Pages/galeria/galeria.component';
 import { CartaComponent } from './Pages/carta/carta.component';
+import {SwiperModule} from 'swiper/angular';
+import { CarrouselComponent } from '../shared/component/carrousel/carrousel.component';
 
 
 @NgModule({
@@ -33,11 +35,13 @@ import { CartaComponent } from './Pages/carta/carta.component';
     ConfirmacionComponent,
     GaleriaComponent,
     CartaComponent,
+    CarrouselComponent
   ],
   imports: [
     CommonModule,
     WebsiteRoutingModule,
     SharedModule,
+    SwiperModule
   ]
 })
 export class WebsiteModule { }

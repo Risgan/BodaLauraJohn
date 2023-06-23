@@ -11,6 +11,9 @@ body { margin: 0; font-family: 'Great Vibes', cursive; }
 @import "primeng/resources/primeng.css";
 
 @import "./assets/localStyle/color.scss";
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 html, body { height: 100%; }
