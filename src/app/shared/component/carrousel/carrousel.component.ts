@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MailService } from 'src/app/website/Service/mail.service';
 import { StorageService } from 'src/app/website/Service/storage.service';
 
 import SwiperCore, { SwiperOptions, Navigation, Pagination, Scrollbar, A11y, Autoplay, Zoom, EffectFade, EffectCube } from 'swiper';
+import { SwiperComponent } from 'swiper/angular';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Zoom, EffectFade, EffectCube]);
 
@@ -17,21 +18,25 @@ export class CarrouselComponent implements OnInit{
 
   @Input() galeria="home";
 
+  @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+
   images: any[] = [];
 
   config: SwiperOptions = {
     slidesPerView: 1,
-    spaceBetween: 50,
-    // navigation: true,
+    spaceBetween: 900,
+    navigation: true,
     pagination: { clickable: true },
     scrollbar: { draggable: true },
     autoplay: {
-      delay: 2000,
+      delay: 3000,
+      disableOnInteraction: true,
     },
     zoom: {
       maxRatio: 100, // Valor máximo de zoom permitido
     },
-    loop: true
+    // loop: true,
+    
     // effect: "cube"
   };
 
@@ -47,6 +52,34 @@ export class CarrouselComponent implements OnInit{
     this.images = await this.storageService.getListImage(this.galeria)
 
     
+  }
+
+  
+  onSlideChange() {
+    // console.log('slide change');
+    // console.log("----",this.config)
+
+    if (this.config) {
+      this.config.autoplay={
+        delay: 100,
+        disableOnInteraction: true,
+      }; // Inicia el autoplay
+    }
+  }
+
+  startAutoplay() {
+    // console.log("----",this.config)
+    if (this.config) {
+      this.config.autoplay={
+        delay: 3000,
+        disableOnInteraction: true,
+      }; // Inicia el autoplay
+    }
+    // this.swiper!.swiperRef.slideNext(200);
+
+  }
+
+  nextSlide() {
   }
  
 }

@@ -2,3 +2,21 @@ p{
     font-size: 23px;
 }
 
+.contentCarrousel{
+    width: 80%;
+}
+
+
+@media (max-width: 900px) {
+    
+    .contentCarrousel{
+        width: 80%;
+    }
+    
+  }
+
+  @media (max-width: 480px) {
+    .contentCarrousel{
+        width: 100%;
+    }
+  }

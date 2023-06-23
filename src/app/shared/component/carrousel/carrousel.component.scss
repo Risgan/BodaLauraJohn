@@ -25,8 +25,23 @@
     height: 300px; // Ajusta la altura deseada
   }
   
-  :root .swiper-slide img {
+  :root .swiper-slide .contentImg {
     width: 100%;
     height: 100%;
+    // height: 43vh;
+    // object-fit: cover; // Ajusta la imagen para que ocupe todo el espacio disponible sin deformarse
+  }
+
+  :root .swiper-slide .contentImg img {
+    // width: 100%;
+    // height: 100%;
+    height: 100%;
     object-fit: cover; // Ajusta la imagen para que ocupe todo el espacio disponible sin deformarse
+  }
+
+  .contentImg{
+    // background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }

@@ -5,9 +5,12 @@
     </ng-template>
 </swiper> -->
 <div style="height: 500px;">
-    <swiper [config]="config">
+    <swiper #swiper [config]="config" (slideChange)="onSlideChange()" (click)="startAutoplay()">
         <ng-template swiperSlide *ngFor="let xs of images">
-            <img [src]="xs" alt="">
+            <div class="contentImg">
+                <img [src]="xs" alt="">
+            </div>
         </ng-template>
     </swiper>
 </div>
+<!-- <button (click)="nextSlide()">Siguiente</button> -->
