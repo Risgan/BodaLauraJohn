@@ -4,7 +4,8 @@ import { PrimengModule } from './primeng/primeng.module';
 import { MaterialModule } from './material/material.module';
 
 const modules=[
-  PrimengModule
+  PrimengModule,
+  
 ]
 
 @NgModule({
