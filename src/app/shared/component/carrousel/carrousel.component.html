@@ -1,9 +1,51 @@
-<!-- <swiper [slidesPerView]="1" [spaceBetween]="50">
-    <ng-template swiperSlide *ngFor="let xs of images">
-        <img  style="width: 100px;" [src]="xs" alt="">
-        
-    </ng-template>
-</swiper> -->
+<!-- <div *ngIf="galeria == 'home'">
+    <div style="height: 500px;">
+        <swiper #swiper [config]="config" (slideChange)="onSlideChange()" (click)="startAutoplay()">
+            <ng-template swiperSlide *ngFor="let xs of imageshome">
+                <div class="contentImg">
+                    <img [src]="xs" alt="">
+                </div>
+            </ng-template>
+        </swiper>
+    </div>    
+</div>
+
+<div *ngIf="galeria == 'John'">
+    <div style="height: 500px;">
+        <swiper #swiper [config]="config" (slideChange)="onSlideChange()" (click)="startAutoplay()">
+            <ng-template swiperSlide *ngFor="let xs of imagesJohn">
+                <div class="contentImg">
+                    <img [src]="xs" alt="">
+                </div>
+            </ng-template>
+        </swiper>
+    </div>    
+</div>
+
+<div *ngIf="galeria == 'Laura'">
+    <div style="height: 500px;">
+        <swiper #swiper [config]="config" (slideChange)="onSlideChange()" (click)="startAutoplay()">
+            <ng-template swiperSlide *ngFor="let xs of imagesLaura">
+                <div class="contentImg">
+                    <img [src]="xs" alt="">
+                </div>
+            </ng-template>
+        </swiper>
+    </div>    
+</div>
+
+<div *ngIf="galeria == 'JohnLaura'">
+    <div style="height: 500px;">
+        <swiper #swiper [config]="config" (slideChange)="onSlideChange()" (click)="startAutoplay()">
+            <ng-template swiperSlide *ngFor="let xs of imagesJohnLaura">
+                <div class="contentImg">
+                    <img [src]="xs" alt="">
+                </div>
+            </ng-template>
+        </swiper>
+    </div>    
+</div> -->
+
 <div style="height: 500px;">
     <swiper #swiper [config]="config" (slideChange)="onSlideChange()" (click)="startAutoplay()">
         <ng-template swiperSlide *ngFor="let xs of images">
@@ -12,5 +54,4 @@
             </div>
         </ng-template>
     </swiper>
-</div>
-<!-- <button (click)="nextSlide()">Siguiente</button> -->
+</div>  

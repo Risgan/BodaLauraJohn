@@ -6,12 +6,12 @@ import { getDownloadURL, getStorage, listAll, ref } from 'firebase/storage';
 })
 export class StorageService {
 
-  listImages: any[]=[];
 
   constructor() { }
 
 
   async getListImage(path: string){
+    var listImages: any[]=[];
 
     const storage = getStorage();
 
@@ -21,25 +21,24 @@ export class StorageService {
     
     await listAll(listRef).then(async (res) => {
 
-      console.log(res);
+      // console.log(res);
       
       res.items.forEach(async (itemRef) => {
         
         await getDownloadURL(ref(storage, JSON.parse(JSON.stringify(itemRef))._location.path_)).then((url) => {
-            this.listImages.push(url)
-            console.log(this.listImages)
-
+            listImages.push(url)
+            // console.log(listImages)
           })
 
                 
         // All the items under listRef.
       });
-    console.log(this.listImages)
+    // console.log(listImages)
 
     }).catch((error) => {
       // Uh-oh, an error occurred!
     });
-    return this.listImages
+    return listImages
   }
 
 }

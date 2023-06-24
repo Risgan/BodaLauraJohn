@@ -14,13 +14,12 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Zoom, EffectF
   styleUrls: ['./carrousel.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class CarrouselComponent implements OnInit{
+export class CarrouselComponent{
 
-  @Input() galeria="home";
+  @Input() images: any[] = [];
 
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
 
-  images: any[] = [];
 
   config: SwiperOptions = {
     slidesPerView: 1,
@@ -46,13 +45,6 @@ export class CarrouselComponent implements OnInit{
     private http: HttpClient,
     private storageService: StorageService,
   ) { }
-
-  async ngOnInit() {
-
-    this.images = await this.storageService.getListImage(this.galeria)
-
-    
-  }
 
   
   onSlideChange() {

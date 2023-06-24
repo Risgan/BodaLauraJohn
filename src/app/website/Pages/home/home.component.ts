@@ -12,6 +12,7 @@ import { StorageService } from '../../Service/storage.service';
 })
 export class HomeComponent implements OnInit {
 
+  imageshome: any[] = [];
   
   constructor(
     // private messageService: MessageService,
@@ -22,9 +23,8 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
 
-    // this.images = await this.storageService.getListImage('')
+    this.imageshome = await this.storageService.getListImage('Laura')
 
-    
   }
  
 }

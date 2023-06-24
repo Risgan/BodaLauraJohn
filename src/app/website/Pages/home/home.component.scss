@@ -1,22 +1,22 @@
-p{
+p {
     font-size: 23px;
 }
 
-.contentCarrousel{
+.contentCarrousel {
     width: 80%;
 }
 
 
 @media (max-width: 900px) {
-    
-    .contentCarrousel{
+
+    .contentCarrousel {
         width: 80%;
     }
-    
-  }
 
-  @media (max-width: 480px) {
-    .contentCarrousel{
+}
+
+@media (max-width: 480px) {
+    .contentCarrousel {
         width: 100%;
     }
-  }
+}

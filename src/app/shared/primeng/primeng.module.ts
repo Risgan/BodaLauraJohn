@@ -6,6 +6,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ImageModule } from 'primeng/image';
 import { GalleriaModule } from 'primeng/galleria';
 import { CarouselModule } from 'primeng/carousel';
+import { TabViewModule } from 'primeng/tabview';
 
 const modules=[
   ButtonModule,
@@ -13,7 +14,8 @@ const modules=[
   SidebarModule,
   ImageModule,
   GalleriaModule,
-  CarouselModule
+  CarouselModule,
+  TabViewModule
 ]
 
 @NgModule({
