@@ -4,6 +4,8 @@
     <app-menu></app-menu>
     <div class="content">
         <div class="target">
+<p-button (click)="confirm()" icon="pi pi-check" label="Confirm"></p-button>
+
             <router-outlet></router-outlet>
         </div>
     </div>
@@ -11,3 +13,10 @@
         <app-footer></app-footer>
     </div>
 </div>
+
+
+<p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+    <!-- <form [formGroup]="formGroup"> -->
+        <!-- <p-autoComplete formControlName="selectedCountry" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name"></p-autoComplete> -->
+    <!-- </form> -->
+</p-dialog>

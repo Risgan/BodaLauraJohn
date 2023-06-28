@@ -22,9 +22,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-
-    this.imageshome = await this.storageService.getListImage('Laura')
-
+    this.imageshome = await this.storageService.getListImage('JohnLaura')
   }
  
 }

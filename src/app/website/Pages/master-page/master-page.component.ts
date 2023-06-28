@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { InvitadoService } from '../../Service/invitado.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-master-page',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class MasterPageComponent {
 
+  visible: boolean = false;
+  formGroup: FormGroup | undefined;
+
+  constructor(
+    private invitadoService: InvitadoService
+  ){
+  
+  }
+
+  
+  confirm(){
+    console.log(this.invitadoService.getInvitado());
+    this.visible = true
+  }
 }

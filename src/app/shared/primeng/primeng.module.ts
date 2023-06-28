@@ -8,6 +8,9 @@ import { GalleriaModule } from 'primeng/galleria';
 import { CarouselModule } from 'primeng/carousel';
 import { TabViewModule } from 'primeng/tabview';
 import { PanelModule } from 'primeng/panel';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DialogModule } from 'primeng/dialog';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 const modules=[
   ButtonModule,
@@ -17,7 +20,10 @@ const modules=[
   GalleriaModule,
   CarouselModule,
   TabViewModule,
-  PanelModule
+  PanelModule,
+  ConfirmDialogModule,
+  DialogModule,
+  AutoCompleteModule
 ]
 
 @NgModule({
