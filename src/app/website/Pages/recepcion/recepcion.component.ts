@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { InvitadoService } from '../../Service/invitado.service';
+import { MailService } from '../../Service/mail.service';
 
 @Component({
   selector: 'app-recepcion',
@@ -12,7 +13,8 @@ export class RecepcionComponent {
 
 constructor(
   private confirmationService: ConfirmationService,
-  private invitadoService: InvitadoService
+  private invitadoService: InvitadoService,
+  private mailService: MailService
 ){
 
 }
@@ -37,6 +39,7 @@ constructor(
 
   confirm(){
     console.log(this.invitadoService.getInvitado());
-    
+    this.mailService.test()
+    // this.mailService.test2()
   }
 }

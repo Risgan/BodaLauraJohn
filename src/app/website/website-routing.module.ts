@@ -23,6 +23,11 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        path:'home/:id',
+        component: HomeComponent,
+        pathMatch: 'full'
+      },
+      {
         path:'ubicacion',
         component: UbicacionComponent,
         pathMatch: 'full'

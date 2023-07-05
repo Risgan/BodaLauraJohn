@@ -19,6 +19,7 @@ import { GaleriaComponent } from './Pages/galeria/galeria.component';
 import { CartaComponent } from './Pages/carta/carta.component';
 import {SwiperModule} from 'swiper/angular';
 import { CarrouselComponent } from '../shared/component/carrousel/carrousel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +42,9 @@ import { CarrouselComponent } from '../shared/component/carrousel/carrousel.comp
     CommonModule,
     WebsiteRoutingModule,
     SharedModule,
-    SwiperModule
+    SwiperModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class WebsiteModule { }

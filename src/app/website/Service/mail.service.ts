@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { QuerySnapshot, collection, doc, getDocs, getFirestore, query, setDoc, where } from "firebase/firestore";
+import { QuerySnapshot, addDoc, collection, doc, getDocs, getFirestore, query, setDoc, where } from "firebase/firestore";
 import { initializeApp } from 'firebase/app';
 import { FirebaseService } from './firebase.service';
 import { getDownloadURL, getStorage, list, listAll, ref } from 'firebase/storage';
@@ -18,16 +18,30 @@ export class MailService {
   }
   
   async test(){
-    // const db = this.firebase.getDb();
-    // console.log(db);
+    const db = this.firebase.getDb();
+    console.log(db);
+    
+    const querySnapshot = await getDocs(collection(db,"Invitados"));
+    console.log(querySnapshot)
+
+    
     
 
     // const querySnapshot = await getDocs(collection(db,"test"));
     // console.log(querySnapshot)
 
-    // querySnapshot.forEach((doc) => {
-    //   console.log(`${doc.id} => ${doc.data()}`);
-    // });
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+      const data = doc.data();
+
+      console.log(data)
+    });
+
+
+    const invitadoRef = doc(db, 'Invitados', '5zUysYhipWXEt84Ir68h');
+
+    console.log(invitadoRef);
+
 
     // querySnapshot.forEach(async (doc) => {
     //   // doc.data() is never undefined for query doc snapshots
@@ -40,47 +54,57 @@ export class MailService {
     // const storage2 = this.firebase.getstorage();
     // console.log(storage2);
     
-    const storage = getStorage();
-    // console.log(storage2);
+    // const storage = getStorage();
+    // // console.log(storage2);
 
-    // const pathReference = ref(storage, 'home/0-5000x3333.jpg');
+    // // const pathReference = ref(storage, 'home/0-5000x3333.jpg');
     
-    // console.log(pathReference);
+    // // console.log(pathReference);
 
-    const listRef = ref(storage, 'home');
+    // const listRef = ref(storage, 'home');
 
-    console.log(listRef);
+    // console.log(listRef);
     
-    listAll(listRef)
-    .then((res) => {
-      console.log(res);
+    // listAll(listRef)
+    // .then((res) => {
+    //   console.log(res);
       
-      res.prefixes.forEach((folderRef) => {
-        console.log(folderRef);
+    //   res.prefixes.forEach((folderRef) => {
+    //     console.log(folderRef);
         
-        // All the prefixes under listRef.
-        // You may call listAll() recursively on them.
-      });
-      res.items.forEach((itemRef) => {
-        console.log(itemRef);
-        console.log(JSON.parse(JSON.stringify(itemRef))._location.path_);
+    //     // All the prefixes under listRef.
+    //     // You may call listAll() recursively on them.
+    //   });
+    //   res.items.forEach((itemRef) => {
+    //     console.log(itemRef);
+    //     console.log(JSON.parse(JSON.stringify(itemRef))._location.path_);
         
-        getDownloadURL(ref(storage, JSON.parse(JSON.stringify(itemRef))._location.path_))
-          .then((url) => {
-            console.log(url);
+    //     getDownloadURL(ref(storage, JSON.parse(JSON.stringify(itemRef))._location.path_))
+    //       .then((url) => {
+    //         console.log(url);
             
-          })
+    //       })
                 
-        // All the items under listRef.
-      });
-    }).catch((error) => {
-      // Uh-oh, an error occurred!
-    });
+    //     // All the items under listRef.
+    //   });
+    // }).catch((error) => {
+    //   // Uh-oh, an error occurred!
+    // });
     
     
 
 
   }
   
+  async test2(){
+    const db = this.firebase.getDb();
+    const invitado = {
+      nombre: 'Juan',
+      apellido: 'Pérez',
+      asistira: true
+    };
+    await addDoc(collection(db, 'Invitados'), invitado);
+
+  }
     
 }
