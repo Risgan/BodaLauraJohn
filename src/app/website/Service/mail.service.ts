@@ -24,18 +24,34 @@ export class MailService {
     const querySnapshot = await getDocs(collection(db,"Invitados"));
     console.log(querySnapshot)
 
+    let datos = querySnapshot.docs.map((doc) => doc.data());
+    datos.sort((a, b) => {
+      if (a["nombre"] === "John" || a["nombre"] === "Laura") {
+        return -1; // Mantener "John" y "Laura" al principio
+      } else if (b["nombre"] === "John" || b["nombre"] === "Laura") {
+        return 1; // Mantener "John" y "Laura" al principio
+      } else {
+        return a["nombre"].localeCompare(b["nombre"]); // Ordenar los demás nombres alfabéticamente
+      }
+    });
+    console.log(datos);
     
-    
+
+    const querySnapshots = await getDocs(collection(db,"Carta"));
+
+    let dato = querySnapshots.docs.map((doc) => doc.data());
+
+    console.log(querySnapshots,dato)
 
     // const querySnapshot = await getDocs(collection(db,"test"));
     // console.log(querySnapshot)
 
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-      const data = doc.data();
+    // querySnapshot.forEach((doc) => {
+    //   console.log(`${doc.id} => ${doc.data()}`);
+    //   const data = doc.data();
 
-      console.log(data)
-    });
+    //   console.log(data)
+    // });
 
 
     const invitadoRef = doc(db, 'Invitados', '5zUysYhipWXEt84Ir68h');
@@ -98,12 +114,11 @@ export class MailService {
   
   async test2(){
     const db = this.firebase.getDb();
-    const invitado = {
-      nombre: 'Juan',
-      apellido: 'Pérez',
-      asistira: true
-    };
-    await addDoc(collection(db, 'Invitados'), invitado);
+    let invitado = {nombre:'Laura',apellido:'Celemin',asistencia:false,coctel:null,entrada:null,fuerte:null}
+
+    
+    invitado = {nombre:'Libia',apellido:'Forero',asistencia:false,coctel:null,entrada:null,fuerte:null}
+
 
   }
     

@@ -32,3 +32,19 @@ nav {
     font-weight: bold;
   }
   
+
+  .menu-container {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+  
+      li {
+        margin: 3px 10px;
+        white-space: nowrap;
+      }
+    }
+  }

@@ -11,12 +11,26 @@
     </div>
     <div class="footer">
         <app-footer></app-footer>
+        <!-- <button (click)="test()">test</button> -->
+
     </div>
 </div>
 
+<p-dialog header="Seleccionar Tu Nombre" [(visible)]="showDialog" [modal]="true" [responsive]="true" [closable]="false" [style]="{width: '70%'}">
+    <div class="invitados-container">
+      <div class="invitados-list" #invitadosList>
+        <ng-container *ngFor="let invitado of invitados">
+          <div class="invitado-item">
+            <p-radioButton [name]="invitado.nombre" [(ngModel)]="selectedInvitado" [value]="invitado" [inputId]="invitado.nombre">
+              
+            </p-radioButton>
+            <label [for]="invitado.nombre" class="ml-2">{{ invitado.nombre }} {{ invitado.apellido }}</label>
 
-<!-- <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
-    <form [formGroup]="formGroup">
-        <p-autoComplete formControlName="selectedCountry" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name"></p-autoComplete>
-    </form>
-</p-dialog> -->
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="button-container">
+      <button pButton type="button" label="Aceptar" (click)="aceptarInvitacion()" [disabled]="!selectedInvitado"></button>
+    </div>
+  </p-dialog>

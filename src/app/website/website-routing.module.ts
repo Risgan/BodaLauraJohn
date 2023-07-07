@@ -6,6 +6,7 @@ import { UbicacionComponent } from './Pages/ubicacion/ubicacion.component';
 import { RecepcionComponent } from './Pages/recepcion/recepcion.component';
 import { GaleriaComponent } from './Pages/galeria/galeria.component';
 import { CartaComponent } from './Pages/carta/carta.component';
+import { HistoriaAmorComponent } from './Pages/historia-amor/historia-amor.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
       {
         path:'ubicacion',
         component: UbicacionComponent,
+        pathMatch: 'full'
+      },
+      {
+        path:'historia',
+        component: HistoriaAmorComponent,
         pathMatch: 'full'
       },
       {

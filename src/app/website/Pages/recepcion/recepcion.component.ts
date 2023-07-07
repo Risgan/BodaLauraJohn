@@ -20,6 +20,8 @@ constructor(
 }
 
   confirm1() {
+    console.log(this.invitadoService.getInvitado())
+
     // this.confirmationService.confirm({
     //     message: 'Are you sure that you want to proceed?',
     //     header: 'Confirmation',
@@ -34,7 +36,7 @@ constructor(
            
     //     }
     // });
-    this.invitadoService.setInvitado("Hola")
+    // this.invitadoService.setInvitado("Hola")
   }
 
   confirm(){

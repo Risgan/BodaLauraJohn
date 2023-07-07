@@ -4,6 +4,9 @@ import { MailService } from '../../Service/mail.service';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from '../../Service/storage.service';
 import { ActivatedRoute } from '@angular/router';
+import { Invitado } from '../../Entity/invitado';
+import { InvitadoService } from '../../Service/invitado.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
   providers: [MessageService]
 })
 export class HomeComponent implements OnInit {
-
+  invitado?: Invitado;
   imageshome: any[] = [];
   id?: string;
 
@@ -21,16 +24,22 @@ export class HomeComponent implements OnInit {
     private emailService: MailService,
     private http: HttpClient,
     private storageService: StorageService,
+    private invitadoService: InvitadoService,
     private route: ActivatedRoute
   ) { }
 
   async ngOnInit() {
+    this.invitadoService.invitado.subscribe((invitado: Invitado) => {
+      this.invitado = invitado;
+      console.log(this.id, this.invitado);
+    });
     this.route.paramMap.subscribe((params: any) => {
       this.id = params.get('id');
     });
-    console.log(this.id);
+    console.log(this.id,this.invitado);
     
     this.imageshome = await this.storageService.getListImage('JohnLaura')
   }
+
  
 }

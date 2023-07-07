@@ -2,6 +2,7 @@ export interface Invitado {
     nombre: string;
     apellido: string;
     asistencia: boolean;
-    // nombre: string;
-    // nombre: string;
+    coctel?: string;
+    entrada?: string;
+    fuerte?: string;
 }

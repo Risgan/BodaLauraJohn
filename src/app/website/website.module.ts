@@ -20,6 +20,7 @@ import { CartaComponent } from './Pages/carta/carta.component';
 import {SwiperModule} from 'swiper/angular';
 import { CarrouselComponent } from '../shared/component/carrousel/carrousel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HistoriaAmorComponent } from './Pages/historia-amor/historia-amor.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ConfirmacionComponent,
     GaleriaComponent,
     CartaComponent,
-    CarrouselComponent
+    CarrouselComponent,
+    HistoriaAmorComponent
   ],
   imports: [
     CommonModule,

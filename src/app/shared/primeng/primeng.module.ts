@@ -11,6 +11,9 @@ import { PanelModule } from 'primeng/panel';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { MenubarModule } from 'primeng/menubar';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 const modules=[
   ButtonModule,
@@ -23,7 +26,10 @@ const modules=[
   PanelModule,
   ConfirmDialogModule,
   DialogModule,
-  AutoCompleteModule
+  AutoCompleteModule,
+  MenubarModule,
+  TabMenuModule,
+  RadioButtonModule
 ]
 
 @NgModule({
