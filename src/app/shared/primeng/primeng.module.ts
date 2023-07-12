@@ -14,6 +14,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { StepsModule } from 'primeng/steps';
 
 const modules=[
   ButtonModule,
@@ -29,7 +30,8 @@ const modules=[
   AutoCompleteModule,
   MenubarModule,
   TabMenuModule,
-  RadioButtonModule
+  RadioButtonModule,
+  StepsModule
 ]
 
 @NgModule({

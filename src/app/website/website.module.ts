@@ -21,6 +21,7 @@ import {SwiperModule} from 'swiper/angular';
 import { CarrouselComponent } from '../shared/component/carrousel/carrousel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HistoriaAmorComponent } from './Pages/historia-amor/historia-amor.component';
+import { VestimentaComponent } from './Pages/vestimenta/vestimenta.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HistoriaAmorComponent } from './Pages/historia-amor/historia-amor.compo
     GaleriaComponent,
     CartaComponent,
     CarrouselComponent,
-    HistoriaAmorComponent
+    HistoriaAmorComponent,
+    VestimentaComponent
   ],
   imports: [
     CommonModule,

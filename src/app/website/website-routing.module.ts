@@ -7,6 +7,7 @@ import { RecepcionComponent } from './Pages/recepcion/recepcion.component';
 import { GaleriaComponent } from './Pages/galeria/galeria.component';
 import { CartaComponent } from './Pages/carta/carta.component';
 import { HistoriaAmorComponent } from './Pages/historia-amor/historia-amor.component';
+import { VestimentaComponent } from './Pages/vestimenta/vestimenta.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,11 @@ const routes: Routes = [
       {
         path:'galeria',
         component: GaleriaComponent,
+        pathMatch: 'full'
+      },
+      {
+        path:'vestimenta',
+        component: VestimentaComponent,
         pathMatch: 'full'
       },
       {

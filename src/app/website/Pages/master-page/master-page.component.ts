@@ -14,6 +14,7 @@ export class MasterPageComponent implements OnInit{
   selectedInvitado: Invitado | null = null;
 
   // formGroup: FormGroup | undefined;
+  
 
   invitados: Invitado[] = [];
 

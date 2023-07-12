@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { InvitadoService } from '../../Service/invitado.service';
 import { MailService } from '../../Service/mail.service';
 
@@ -9,7 +9,10 @@ import { MailService } from '../../Service/mail.service';
   styleUrls: ['./recepcion.component.scss'],
   providers: [ConfirmationService, MessageService]
 })
-export class RecepcionComponent {
+export class RecepcionComponent implements OnInit{
+
+  items!: MenuItem[]
+  activeIndex: number = 0;
 
 constructor(
   private confirmationService: ConfirmationService,
@@ -17,6 +20,35 @@ constructor(
   private mailService: MailService
 ){
 
+}
+  ngOnInit(): void {
+    this.items = [
+      {
+          label: 'Asistencia',
+          command: (event: any) => console.log("a"),
+          // routerLink: 'Asistencia'
+      },
+      {
+          label: 'Menú',
+          command: (event: any) => console.log("b")
+      },
+      {
+          label: 'Entrada',
+          command: (event: any) => console.log("c")
+      },
+      // {
+      //     label: 'Fuerte',
+      //     command: (event: any) => console.log("d")
+      // }
+  ];
+  }
+
+  goToNextStep() {
+    this.activeIndex++;
+  }
+
+  onActiveIndexChange(event: number) {
+    this.activeIndex = event;
 }
 
   confirm1() {
