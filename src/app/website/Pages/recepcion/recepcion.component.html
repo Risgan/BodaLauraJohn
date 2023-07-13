@@ -28,6 +28,18 @@ Recuerda personalizar el mensaje según tus preferencias y detalles específicos
 </p> -->
 
 <!-- <p-steps [model]="items" [readonly]="false" [activeIndex]="activeIndex" (activeIndexChange)="onActiveIndexChange($event)"></p-steps> -->
-<p-steps [model]="items" [readonly]="true" [activeIndex]="activeIndex"></p-steps>
+<p-steps [model]="items" [readonly]="false" [activeIndex]="activeIndex"></p-steps>
 
-<!-- <button (click)="goToNextStep()">tes</button> -->
+<button (click)="goToNextStep()">tes</button>
+
+<!-- <div class="step-content"> -->
+    <div *ngIf="activeIndex === 0" class="step1">
+        <app-invitacion (next)="goToNextStep()"></app-invitacion>
+    </div>
+
+    <div *ngIf="activeIndex === 1" class="step2">
+      <app-carta></app-carta>
+    </div>
+
+    
+<!-- </div> -->

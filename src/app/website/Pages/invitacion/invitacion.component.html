@@ -1,1 +1,19 @@
-<p>invitacion works!</p>
+<div class="attendance-confirmation-section">
+    <h2>¡Estamos emocionados de verte en nuestra boda!</h2>
+  
+    <p class="message">Por favor, confirma tu asistencia:</p>
+  
+    <div class="confirmation-options">
+      <p-radioButton name="attendance" value="yes" label="Sí" [(ngModel)]="attendance"></p-radioButton>
+      <p-radioButton name="attendance" value="no" label="No" [(ngModel)]="attendance"></p-radioButton>
+    </div>
+  
+    <p-button label="Enviar" class="confirm-button" (click)="submitAttendance()"></p-button>
+  </div>
+
+  <p-dialog header="Lamentamos no contar con tu asistencia" [(visible)]="showDialog" [responsive]="true">
+    <p>{{ dialogMessage }}</p>
+    <p-footer>
+      <button type="button" pButton icon="pi pi-times" label="Cerrar" (click)="closeDialog()"></button>
+    </p-footer>
+  </p-dialog>

@@ -32,10 +32,10 @@ constructor(
           label: 'Menú',
           command: (event: any) => console.log("b")
       },
-      {
-          label: 'Entrada',
-          command: (event: any) => console.log("c")
-      },
+      // {
+      //     label: 'Entrada',
+      //     command: (event: any) => console.log("c")
+      // },
       // {
       //     label: 'Fuerte',
       //     command: (event: any) => console.log("d")
@@ -75,5 +75,10 @@ constructor(
     console.log(this.invitadoService.getInvitado());
     this.mailService.test()
     // this.mailService.test2()
+  }
+
+  test(){
+    console.log("asdfasdf");
+    
   }
 }
