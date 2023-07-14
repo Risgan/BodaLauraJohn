@@ -4,7 +4,7 @@
 
     <p class="menu-message">Nuestra exquisita selección de platos hará que disfrutes de una experiencia culinaria
         inolvidable. </p>
-    <p class="menu-message">Descubre nuestros sabores y deleita tus sentidos en esta ocasión especial.</p>
+    <p class="menu-message">Selecciona del menú el plato para deleites tus sentidos en esta ocasión especial.</p>
 <!-- 
     <h2>Categoría:</h2>
     <p-radioButton [(ngModel)]="selectedCategory" [value]="'cocteles'">Cocteles</p-radioButton>
@@ -22,18 +22,20 @@
             <p-radioButton [(ngModel)]="selectCoctel" value="{{item}}" label="{{item}}" (onClick)="onCategoryChange()"></p-radioButton>
         </div>
     </p-fieldset>
-
+<br>
     <p-fieldset legend="Entradas">
         <div *ngFor="let item of listEntrada">
             <p-radioButton [(ngModel)]="selectEntrada" value="{{item}}" label="{{item}}" (onClick)="onCategoryChange()"></p-radioButton>
         </div>
     </p-fieldset>
+    <br>
 
     <p-fieldset legend="Plato Fuerte">
         <div *ngFor="let item of listFuerte">
             <p-radioButton [(ngModel)]="selectFuerte" value="{{item}}" label="{{item}}" (onClick)="onCategoryChange()"></p-radioButton>
         </div>
     </p-fieldset>
+    <br>
 
     <p-fieldset legend="Bebida">
         <div *ngFor="let item of listBebida">
