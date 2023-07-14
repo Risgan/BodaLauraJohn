@@ -25,7 +25,7 @@ export class MasterPageComponent implements OnInit{
   }
 
   async ngOnInit(): Promise<void> {
-    // await this.obtenerInvitados();    
+    await this.obtenerInvitados();    
   }
 
   async obtenerInvitados() {
