@@ -1,1 +1,44 @@
-<p>carta works!</p>
+<div class="menu-section">
+    <!-- <button (click)="test()">test</button> -->
+    <h2>Menú de Comida</h2>
+
+    <p class="menu-message">Nuestra exquisita selección de platos hará que disfrutes de una experiencia culinaria
+        inolvidable. </p>
+    <p class="menu-message">Descubre nuestros sabores y deleita tus sentidos en esta ocasión especial.</p>
+<!-- 
+    <h2>Categoría:</h2>
+    <p-radioButton [(ngModel)]="selectedCategory" [value]="'cocteles'">Cocteles</p-radioButton>
+    <p-radioButton [(ngModel)]="selectedCategory" [value]="'entradas'">Entradas</p-radioButton>
+    <p-radioButton [(ngModel)]="selectedCategory" [value]="'fuerte'">Platos Fuertes</p-radioButton>
+    <p-radioButton [(ngModel)]="selectedCategory" [value]="'bebidas'">Bebidas</p-radioButton>
+
+    <h3>{{ getCategoryTitle(selectedCategory) }}</h3>
+    <ul class="menu-list">
+        <li *ngFor="let item of getMenuItems(selectedCategory)">{{ item }}</li>
+    </ul> -->
+
+    <p-fieldset legend="Coctel">
+        <div *ngFor="let item of listCoctel">
+            <p-radioButton [(ngModel)]="selectCoctel" value="{{item}}" label="{{item}}" (onClick)="onCategoryChange()"></p-radioButton>
+        </div>
+    </p-fieldset>
+
+    <p-fieldset legend="Entradas">
+        <div *ngFor="let item of listEntrada">
+            <p-radioButton [(ngModel)]="selectEntrada" value="{{item}}" label="{{item}}" (onClick)="onCategoryChange()"></p-radioButton>
+        </div>
+    </p-fieldset>
+
+    <p-fieldset legend="Plato Fuerte">
+        <div *ngFor="let item of listFuerte">
+            <p-radioButton [(ngModel)]="selectFuerte" value="{{item}}" label="{{item}}" (onClick)="onCategoryChange()"></p-radioButton>
+        </div>
+    </p-fieldset>
+
+    <p-fieldset legend="Bebida">
+        <div *ngFor="let item of listBebida">
+            <p-radioButton [(ngModel)]="selectBebida" value="{{item}}" label="{{item}}" (onClick)="onCategoryChange()"></p-radioButton>
+        </div>
+    </p-fieldset>
+
+</div>

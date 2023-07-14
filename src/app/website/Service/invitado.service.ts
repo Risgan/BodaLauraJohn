@@ -50,4 +50,12 @@ export class InvitadoService {
       }
     });
   }
+
+  public async getListCarta(){
+    const db = this.firebase.getDb();
+    const querySnapshot = await getDocs(collection(db,"Carta"));
+    let datos = querySnapshot.docs.map((doc) => doc.data());    
+    // console.log(datos[0]);
+    return datos[0];
+  }
 }

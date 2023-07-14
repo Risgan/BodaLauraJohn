@@ -22,6 +22,7 @@ import { CarrouselComponent } from '../shared/component/carrousel/carrousel.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HistoriaAmorComponent } from './Pages/historia-amor/historia-amor.component';
 import { VestimentaComponent } from './Pages/vestimenta/vestimenta.component';
+import { ConsideracionesComponent } from './Pages/consideraciones/consideraciones.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { VestimentaComponent } from './Pages/vestimenta/vestimenta.component';
     CartaComponent,
     CarrouselComponent,
     HistoriaAmorComponent,
-    VestimentaComponent
+    VestimentaComponent,
+    ConsideracionesComponent
   ],
   imports: [
     CommonModule,

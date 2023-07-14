@@ -15,6 +15,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { StepsModule } from 'primeng/steps';
+import { FieldsetModule } from 'primeng/fieldset';
 
 const modules=[
   ButtonModule,
@@ -31,7 +32,8 @@ const modules=[
   MenubarModule,
   TabMenuModule,
   RadioButtonModule,
-  StepsModule
+  StepsModule,
+  FieldsetModule
 ]
 
 @NgModule({

@@ -4,8 +4,10 @@
     <p class="message">Por favor, confirma tu asistencia:</p>
   
     <div class="confirmation-options">
-      <p-radioButton name="attendance" value="yes" label="Sí" [(ngModel)]="attendance"></p-radioButton>
-      <p-radioButton name="attendance" value="no" label="No" [(ngModel)]="attendance"></p-radioButton>
+      <div class="sub-container">
+        <p-radioButton name="attendance" value="yes" label="Sí" [(ngModel)]="attendance"></p-radioButton>
+        <p-radioButton name="attendance" value="no" label="No" [(ngModel)]="attendance"></p-radioButton>
+      </div>
     </div>
   
     <p-button label="Enviar" class="confirm-button" (click)="submitAttendance()"></p-button>

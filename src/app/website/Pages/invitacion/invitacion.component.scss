@@ -10,7 +10,7 @@
   }
   
   .message {
-    font-size: 18px;
+    // font-size: 18px;
     color: #666;
     margin-bottom: 20px;
   }
@@ -20,6 +20,11 @@
     margin-bottom: 20px;
     justify-content: space-around;
     font-family: auto;    
+    .sub-container{
+      width: 138px;
+      display: flex;
+      justify-content: space-around;
+    }
   }
   
   .confirm-button {
