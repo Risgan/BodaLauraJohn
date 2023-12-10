@@ -33,12 +33,13 @@ export class MasterPageComponent implements OnInit{
     console.log(documentos)
     this.invitados = documentos.map((doc) => {
       const invitado: Invitado = {
-        nombre: doc['nombre'],
-        apellido: doc['apellido'],
-        asistencia: doc['asistencia'],
-        coctel: doc['coctel'],
-        entrada: doc['entrada'],
-        fuerte: doc['fuerte']
+        nombre: doc.data['nombre'],
+        apellido: doc.data['apellido'],
+        asistencia: doc.data['asistencia'],
+        coctel: doc.data['coctel'],
+        entrada: doc.data['entrada'],
+        fuerte: doc.data['fuerte'],
+        id: doc.id
       };
       return invitado;
     });

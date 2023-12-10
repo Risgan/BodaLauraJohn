@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InvitadoService } from '../../Service/invitado.service';
+import { InvitadoCarta } from '../../Entity/invitado';
 
 @Component({
   selector: 'app-carta',
@@ -9,16 +10,18 @@ import { InvitadoService } from '../../Service/invitado.service';
 export class CartaComponent implements OnInit{
 
   listCoctel: any[]=[]
-  selectCoctel!: string
+  @Input() selectCoctel?: string
 
   listEntrada: any[]=[]
-  selectEntrada!: string
+  @Input() selectEntrada?: string
 
   listFuerte: any[]=[]
-  selectFuerte!: string
+  @Input() selectFuerte?: string
 
   listBebida: any[]=[]
-  selectBebida!: string
+  @Input() selectBebida?: string
+
+  @Output() dataOut: EventEmitter<InvitadoCarta> = new EventEmitter<InvitadoCarta>()
   
   constructor(
     private invitadoService: InvitadoService,
@@ -33,7 +36,16 @@ export class CartaComponent implements OnInit{
 
 
   onCategoryChange() {
-    console.log('Categoría seleccionada:', this.selectCoctel);
+    let data: InvitadoCarta = {
+      bebida: this.selectBebida!,
+      coctel: this.selectCoctel!,
+      entrada: this.selectEntrada!,
+      fuerte: this.selectFuerte!
+    }
+
+    this.dataOut.emit(data)
+    // console.log('Categoría seleccionada:', this.selectCoctel);
+    
   }
 
   // getCategoryTitle(category: string): string {

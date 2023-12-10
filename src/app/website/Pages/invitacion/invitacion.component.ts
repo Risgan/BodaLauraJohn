@@ -1,13 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { InvitadoService } from '../../Service/invitado.service';
+import { Invitado } from '../../Entity/invitado';
 
 @Component({
   selector: 'app-invitacion',
   templateUrl: './invitacion.component.html',
   styleUrls: ['./invitacion.component.scss']
 })
-export class InvitacionComponent {
+export class InvitacionComponent implements OnInit{
 
-  @Output() next = new EventEmitter();
+  @Output() next: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() asistencia!: boolean
 
   attendance!: string;
   showDialog: boolean = false;
@@ -15,22 +18,36 @@ export class InvitacionComponent {
 
   constructor(
     // private dialogService: DialogService
-    ) {}
+    private invitadoService: InvitadoService,
+    ) {
+
+    }
+
+  ngOnInit() {
+    
+  }
 
     submitAttendance() {
-      if (this.attendance === 'yes') {
+      if (this.asistencia === true) {
         // Enviar la confirmación de asistencia al servidor o realizar alguna otra acción necesaria
         console.log('Confirmación de asistencia enviada');
         // Por ejemplo, puedes mostrar un mensaje de éxito en la página
         // alert('¡Confirmación de asistencia enviada! ¡Nos vemos en la boda!');
-        this.next.emit();
       } else {
         // Mostrar el diálogo con el mensaje
-        this.showDialog = true;
+        this.showDialog = true;    
+        this.invitadoService
       }
+      this.next.emit(this.asistencia);
+
     }
 
   closeDialog() {
     this.showDialog = false;
+  }
+
+  test(){
+    console.log(this.attendance)
+    
   }
 }

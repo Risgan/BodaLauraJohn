@@ -2,15 +2,16 @@
     <h2>¡Estamos emocionados de verte en nuestra boda!</h2>
   
     <p class="message">Por favor, confirma tu asistencia:</p>
+    <p class="message">¿Asistirás?</p>
   
     <div class="confirmation-options">
       <div class="sub-container">
-        <p-radioButton name="attendance" value="yes" label="Sí" [(ngModel)]="attendance"></p-radioButton>
-        <p-radioButton name="attendance" value="no" label="No" [(ngModel)]="attendance"></p-radioButton>
+        <p-radioButton name="attendance" [value]="true" label="Sí" [(ngModel)]="asistencia"></p-radioButton>
+        <p-radioButton name="attendance" [value]="false" label="No" [(ngModel)]="asistencia"></p-radioButton>
       </div>
     </div>
   
-    <p-button label="Enviar" class="confirm-button" (click)="submitAttendance()"></p-button>
+    <p-button [label]="asistencia ? 'Aceptar' : 'Enviar'" class="confirm-button" (click)="submitAttendance()"></p-button>
   </div>
 
   <p-dialog header="Lamentamos no contar con tu asistencia" [(visible)]="showDialog" [responsive]="true">

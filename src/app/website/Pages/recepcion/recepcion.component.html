@@ -6,11 +6,15 @@
     
     <div class="step-content">
         <div *ngIf="activeIndex === 0" class="step1">
-            <app-invitacion (next)="goToNextStep()"></app-invitacion>
+            <app-invitacion [asistencia]="dataInvitado.asistencia" (next)="goToAceptarAsistencia($event)"></app-invitacion>
         </div>
     
         <div *ngIf="activeIndex === 1" class="step2">
-          <app-carta></app-carta>
+          <app-carta (dataOut)="goToCarta($event)"
+            [selectBebida]="dataInvitado.bebida" 
+            [selectCoctel]="dataInvitado.coctel" 
+            [selectEntrada]="dataInvitado.entrada" 
+            [selectFuerte]="dataInvitado.fuerte"></app-carta>
         </div>
     
         <div *ngIf="activeIndex === 2" class="step3">
@@ -25,9 +29,16 @@
   <div class="button-footer" *ngIf="activeIndex>0">
     <button [disabled]="activeIndex==0" class="p-button-info" pButton label="Volver" (click)="goToBackStep()"></button>  
     <button *ngIf="activeIndex!=2" class="p-button-info" pButton label="Siguiente" (click)="goToNextStep()"></button>
-    <button *ngIf="activeIndex==2" class="p-button-info" pButton label="Enviar" (click)="goToNextStep()"></button>
+    <button *ngIf="activeIndex==2" class="p-button-info" pButton label="Enviar" (click)="sendUpdate()"></button>
   </div>
 
 </div>
+
+<p-dialog header="Gracias por tu confirmación" [(visible)]="showDialog" [responsive]="true">
+  <p>{{ dialogMessage }}</p>
+  <p-footer>
+    <button type="button" pButton icon="pi pi-times" label="Cerrar" (click)="closeDialog()"></button>
+  </p-footer>
+</p-dialog>
 
 
