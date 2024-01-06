@@ -12,6 +12,8 @@
     </div>
   
     <p-button [label]="asistencia ? 'Aceptar' : 'Enviar'" class="confirm-button" (click)="submitAttendance()"></p-button>
+    <br>
+    <p>Recuerda que la fecha maxima para confirmar es el 27 de marzo de 2024.</p>
   </div>
 
   <p-dialog header="Lamentamos no contar con tu asistencia" [(visible)]="showDialog" [responsive]="true">

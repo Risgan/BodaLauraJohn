@@ -31,6 +31,21 @@ export class MasterPageComponent implements OnInit{
   async obtenerInvitados() {
     const documentos = await this.invitadoService.getListInvitados();
     console.log(documentos)
+    let nuevoArray: any[] = [];
+
+    documentos.forEach((val:any)=>{
+      console.log(val.data.nombre + " " + val.data.apellido,);
+      let nuevoObjeto = {
+        // Agrega los valores concatenados como propiedades al nuevo objeto
+        idNombreApellido: val.data.nombre + " " + val.data.apellido,
+        // Puedes agregar otras propiedades si es necesario
+      };
+      
+      // Agrega el nuevo objeto al nuevo array
+      nuevoArray.push(nuevoObjeto);
+    })
+    console.log(nuevoArray);
+    
     this.invitados = documentos.map((doc) => {
       const invitado: Invitado = {
         nombre: doc.data['nombre'],
