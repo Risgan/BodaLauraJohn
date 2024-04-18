@@ -21,9 +21,56 @@
 
   
   @media (max-width: 768px) {
-  
+    .cont-lluvia{
+      margin-top: auto !important;
+      margin-left: auto !important;
+    }
   }
   
   @media (max-width: 480px) {
-  
+    .cont-lluvia{
+      margin-top: auto !important;
+      margin-left: auto !important;
+    }
   }
+
+  .cont-lluvia{
+    position: absolute;
+    /* background: red; */
+    /* height: 90px; */
+    /* width: 90px; */
+    margin-top: 20px;
+    margin-left: 100px;
+    text-align: center;
+
+    .lluvia{
+      // background: rgb(56, 56, 187);
+      // width: 50px;
+      // height: 50px;
+      // border-radius: 50%;
+
+      background: rgb(56, 56, 187);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      // clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Ajusta los valores según prefieras */
+      display: inline-block;
+      line-height: 1.2em;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+
+      p {
+        margin: 0;
+        font-size: 12px; /* Ajusta el tamaño de la fuente según prefieras */
+        color: white; /* Ajusta el color del texto según prefieras */
+        font-size: 20px;
+        font-family: fangsong;
+        transform: rotate(323deg);
+      }
+    }
+  }
+  
